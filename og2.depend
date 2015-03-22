@@ -10,11 +10,14 @@
 1426982679 source:/Users/Gaspar/Documents/prog/og2/src/Loader.cpp
 	"Loader.h"
 
-1426983663 source:/var/www/DEV/3dgen/OG/main.cpp
-	<GLUT/glut.h>
+1427036585 source:/var/www/DEV/3dgen/OG/main.cpp
+	<GL/gl.h>
 	<GL/glut.h>
-	<stdlib.h>
-	"include/Loader.h"
+	<stdio.h>
+	<cstdio>
+	<string>
+	<algorithm>
+	"objload.h"
 
 1426983508 /var/www/DEV/3dgen/OG/include/Loader.h
 
@@ -25,4 +28,26 @@
 	"include/Loader.h"
 
 1426983981 /Users/Gaspar/Documents/prog/og2/OG/include/Loader.h
+
+1427036210 /var/www/DEV/3dgen/OG/objload.cpp
+	<GL/gl.h>
+	<GL/glut.h>
+	<stdio.h>
+	<cstdio>
+	<string>
+	<algorithm>
+
+1427036933 source:/var/www/DEV/3dgen/OG/objload.cpp
+	<GL/gl.h>
+	<GL/glut.h>
+	<stdio.h>
+	"objload.h"
+
+1427036933 /var/www/DEV/3dgen/OG/objload.h
+	<GL/gl.h>
+	<GL/glut.h>
+	<stdio.h>
+	<cstdio>
+	<string>
+	<algorithm>
 

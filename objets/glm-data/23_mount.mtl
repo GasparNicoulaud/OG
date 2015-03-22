@@ -1,0 +1,42 @@
+# 
+# Wavefront material file
+# Converted by the DEEP Exploration 
+# Right Hemisphere, LTD
+# http://www.righthemisphere.com/
+# 
+newmtl terrain
+	 Ka 0 0 0
+	 Kd 0.784314 0.784314 0.784314
+	 Ks 0.117647 0.117647 0.117647
+	 illum 2
+	 Ns 11.3137
+map_Kd ter_C.jpg
+map_bump ter_B.jpg
+bump ter_B.jpg
+newmtl trees01
+	 Ka 0 0 0
+	 Kd 0.784314 0.784314 0.784314
+	 Ks 0 0 0
+	 illum 2
+	 Ns 8
+map_Kd tree01_C.jpg
+map_opacity tree01_T.jpg
+map_d tree01_T.jpg
+newmtl trees02
+	 Ka 0 0 0
+	 Kd 0.784314 0.784314 0.784314
+	 Ks 0 0 0
+	 illum 2
+	 Ns 8
+map_Kd tree02_C.jpg
+map_opacity tree02_T.jpg
+map_d tree02_T.jpg
+newmtl stone
+	 Ka 0 0 0
+	 Kd 0.784314 0.784314 0.784314
+	 Ks 0.117647 0.117647 0.117647
+	 illum 2
+	 Ns 11.3137
+map_Kd rock01_C.jpg
+map_bump rock01_B.jpg
+bump rock01_B.jpg

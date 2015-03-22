@@ -33,11 +33,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Linker>
-			<Add option="-framework GLUT" />
-			<Add option="-framework OpenGL" />
-			<Add option="-framework Cocoa" />
-		</Linker>
+		<Unit filename="exporter.cpp" />
+		<Unit filename="exporter.h" />
+		<Unit filename="glm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="glm.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

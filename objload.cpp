@@ -26,7 +26,7 @@ void loadObj(char *fname, GLuint* obj_nb,int id){
 
         fp=fopen(fname,"r");
 
-        if(fp != NULL){printf("reading chair.obj\n\n");}
+        if(fp != NULL){printf("reading %s\n\n",fname);}
         else{printf("fp est null\n\n");}
 
 
@@ -46,7 +46,7 @@ void loadObj(char *fname, GLuint* obj_nb,int id){
 
         for(int j = 0; j< nbvertex; j++) {
                 vertice[j] = new GLfloat[3];
-                printf("nb vertex = %i\nOK : %i\n",nbvertex,j);
+                //printf("nb vertex = %i\nOK : %i\n",nbvertex,j);
         }
 
        fseek(fp,0,SEEK_SET);
@@ -74,7 +74,7 @@ void loadObj(char *fname, GLuint* obj_nb,int id){
                     glVertex3f(vertice[v1-1][0],vertice[v1-1][1],vertice[v1-1][2]);
                     glVertex3f(vertice[v2-1][0],vertice[v2-1][1],vertice[v2-1][2]);
                     glVertex3f(vertice[v3-1][0],vertice[v3-1][1],vertice[v3-1][2]);
-                    printf("tri\n");
+                    //printf("tri\n");
             }
         }
 
@@ -95,7 +95,7 @@ void loadObj(char *fname, GLuint* obj_nb,int id){
                     glVertex3f(vertice[v2-1][0],vertice[v2-1][1],vertice[v2-1][2]);
                     glVertex3f(vertice[v3-1][0],vertice[v3-1][1],vertice[v3-1][2]);
                     glVertex3f(vertice[v4-1][0],vertice[v4-1][1],vertice[v4-1][2]);
-                    printf("quad\n");
+                    //printf("quad\n");
             }
         }
 

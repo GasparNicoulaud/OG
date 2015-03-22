@@ -1,0 +1,76 @@
+# 
+# Wavefront material file
+# Converted by the DEEP Exploration 
+# Right Hemisphere, LTD
+# http://www.righthemisphere.com/
+# 
+newmtl mount1
+	 Ka 0 0 0
+	 Kd 0.909804 0.807843 0.658824
+	 Ks 0.0909804 0.0807843 0.0658824
+	 illum 2
+	 Ns 8
+map_Kd s_pt2_C.jpg
+map_bump s_pt2_B.jpg
+bump s_pt2_B.jpg
+newmtl grass
+	 Ka 0 0 0
+	 Kd 0.666667 0.937255 0.627451
+	 Ks 0.0666667 0.0937255 0.0627451
+	 illum 2
+	 Ns 8
+map_Kd s_color_C.jpg
+newmtl mount2
+	 Ka 0 0 0
+	 Kd 0.933333 0.635294 0.827451
+	 Ks 0.0933333 0.0635294 0.0827451
+	 illum 2
+	 Ns 8
+map_Kd s_pt1_C.jpg
+map_bump s_pt1_B.jpg
+bump s_pt1_B.jpg
+newmtl tree01
+	 Ka 0 0 0
+	 Kd 0.784314 0.784314 0.784314
+	 Ks 0 0 0
+	 illum 2
+	 Ns 8
+map_Kd tree01C.jpg
+map_opacity tree01T.jpg
+map_d tree01T.jpg
+newmtl tree02
+	 Ka 0 0 0
+	 Kd 0.784314 0.784314 0.784314
+	 Ks 0 0 0
+	 illum 2
+	 Ns 8
+map_Kd tree02C.jpg
+map_opacity tree02T.jpg
+map_d tree02T.jpg
+newmtl tree03
+	 Ka 0 0 0
+	 Kd 0.784314 0.784314 0.784314
+	 Ks 0 0 0
+	 illum 2
+	 Ns 8
+map_Kd tree03C.jpg
+map_opacity tree03T.jpg
+map_d tree03T.jpg
+newmtl bush01
+	 Ka 0 0 0
+	 Kd 0.784314 0.784314 0.784314
+	 Ks 0 0 0
+	 illum 2
+	 Ns 8
+map_Kd bush01_C.jpg
+map_opacity bush01_T.jpg
+map_d bush01_T.jpg
+newmtl stone
+	 Ka 0 0 0
+	 Kd 0.784314 0.784314 0.784314
+	 Ks 0.117647 0.117647 0.117647
+	 illum 2
+	 Ns 11.3137
+map_Kd rock02_C.jpg
+map_bump rock02_B.jpg
+bump rock02_B.jpg

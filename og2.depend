@@ -1,6 +1,12 @@
 # depslib dependency file v1.0
-1426980592 source:/Users/Gaspar/Documents/prog/og2/main.cpp
+1426982800 source:/Users/Gaspar/Documents/prog/og2/main.cpp
 	<GLUT/glut.h>
 	<GL/glut.h>
 	<stdlib.h>
+	"Loader.h"
+
+1426982679 /Users/Gaspar/Documents/prog/og2/include/Loader.h
+
+1426982679 source:/Users/Gaspar/Documents/prog/og2/src/Loader.cpp
+	"Loader.h"
 

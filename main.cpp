@@ -19,6 +19,7 @@
 #endif
 
 #include <stdlib.h>
+#include "Loader.h"
 
 static int slices = 16;
 static int stacks = 16;

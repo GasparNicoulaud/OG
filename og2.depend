@@ -10,3 +10,9 @@
 1426982679 source:/Users/Gaspar/Documents/prog/og2/src/Loader.cpp
 	"Loader.h"
 
+1426983508 source:/var/www/DEV/3dgen/OG/main.cpp
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	"Loader.h"
+

@@ -27,7 +27,7 @@ float carrot;
 
 
 void loadObj(char *fname){
-printf("print_1");
+printf("print_loadobj_1");
    std::string strlel;
 
    GLfloat **vertice;
@@ -42,35 +42,34 @@ printf("print_1");
    int nbvertex = 0;
 
    fp=fopen(fname,"r");
-   if (!fp) {
-        printf("can't open file %s\n", fname);
-        exit(1);
-    }
 
-   glPointSize(2.0);
-   glNewList(car, GL_COMPILE);
+    printf("print_loadobj_2");
 
     while(!(feof(fp))) {
-        read=fscanf(fp,"%c %f %f %f",&ch,&x,&y,&z);
+        read=fscanf(fp,"%c",&ch);
         if(read==4&&ch=='v') {
                 nbvertex++;
         }
-   }
 
-   glEndList();
+        printf("bizou1");
+   }
+printf("print_loadobj_ghtrhrhfhythytjhtjhty");
+
    fclose(fp);
 
+
+
+        printf("bizou2");
     vertice = new GLfloat* [ nbvertex ];//[3];
-    for(int i = 0; i< nbvertex; i++)
+    for(int j = 0; j< nbvertex; j++)
     {
-        vertice[i] = new GLfloat[3];
+        vertice[j] = new GLfloat[3];
     }
 
    fp=fopen(fname,"r");
 
-   glPointSize(2.0);
-   glNewList(car, GL_COMPILE);
 
+printf("print_loadobj_3");
 
     while(!(feof(fp))) {
         read=fscanf(fp,"%c %f %f %f",&ch,&x,&y,&z);
@@ -82,7 +81,6 @@ printf("print_1");
         }
    }
 
-   glEndList();
    fclose(fp);
 
    ////////////aaaaaaficchaaaaaaaaaaaage   trianglex
@@ -90,7 +88,7 @@ printf("print_1");
 
    fp=fopen(fname,"r");
 
-   glPointSize(2.0);
+
    glNewList(car, GL_COMPILE);
 
 
@@ -108,12 +106,14 @@ printf("print_1");
                 glVertex3f(vertice[v1][0],vertice[v1][1],vertice[v1][2]);
                 glVertex3f(vertice[v2][0],vertice[v2][1],vertice[v2][2]);
                 glVertex3f(vertice[v3][0],vertice[v3][1],vertice[v3][2]);
+                printf("ouuuu");
         }
    }
 
    glEnd();
 
    //glPopMatrix();
+
    glEndList();
    fclose(fp);
 
@@ -191,7 +191,7 @@ glutSwapBuffers(); //swap the buffers
 int main(int argc,char **argv)
 {
 printf("ok");
-/*glutInit(&argc,argv);
+glutInit(&argc,argv);
 glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGB|GLUT_DEPTH);
 glutInitWindowSize(800,450);
 glutInitWindowPosition(20,20);
@@ -199,7 +199,9 @@ glutCreateWindow("ObjLoader");
 glutReshapeFunc(reshape);
 glutDisplayFunc(display);
 glutIdleFunc(display);
+printf("loadobj");
 loadObj("objets/dchair_obj.obj");//replace porsche.obj with radar.obj or any other .obj to display it
-glutMainLoop();*/
+
+glutMainLoop();
 return 0;
 }

@@ -3,8 +3,8 @@
 
 
 void export_scene(char *filename){
-    int width = glutGet(GLUT_SCREEN_WIDTH);
-    int height = glutGet( GLUT_SCREEN_HEIGHT);
+    int width = /*glutGet(GLUT_SCREEN_WIDTH);*/800;
+    int height = /*glutGet( GLUT_SCREEN_HEIGHT);*/600;
     FILE *png;
     GLubyte *OpenGLimage, *p;
     gdImagePtr image;

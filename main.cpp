@@ -16,12 +16,15 @@
 
 float carrot;
 
+int nbr=0;
+
 bool exported=false;
 
 GLuint obj_array[10];
 
 GLMmodel *model[10];
 float rnd[10][3];
+int rndcolors[10][3];
 
 int nbmodel,nbfi;
 char files[1000][256];
@@ -51,10 +54,11 @@ void drawCar()
    glCallList(obj_array[2]);
    */
    for(int i = 0; i<nbmodel;i++){
-   glTranslatef(rnd[nbmodel][0],rnd[nbmodel][1],rnd[nbmodel][2]);
-   glRotatef(1,rnd[nbmodel][0],rnd[nbmodel][1],rnd[nbmodel][2]);
+        glTranslatef(rnd[nbmodel][0],rnd[nbmodel][1],rnd[nbmodel][2]);
+        glRotatef(1,rnd[nbmodel][0],rnd[nbmodel][1],rnd[nbmodel][2]);
+        glColor3ub(rndcolors[i][0],rndcolors[i][1],rndcolors[i][2]);
         glmDraw(model[i],0);
-        }
+    }
    glPopMatrix();
    glPopMatrix();
    carrot=carrot+0.6;
@@ -69,18 +73,19 @@ glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 glLoadIdentity();
 drawCar();
 glutSwapBuffers(); //swap the buffers
-if(exported == false){ export_scene("/var/www/DEV/3dgen/OG/bin/Debug/lol.png"); exported = true;}
+if(exported == false && nbr > ((rand()%200)+100)){ export_scene("/var/www/DEV/3dgen/OG/bin/Debug/lol.png"); exported = true;}
+nbr++;
 glutPostRedisplay();
 }
 
-
+//////////////////////////main-main-main-main//////////////////////////////////////////////////////
 int main(int argc,char **argv){
 printf("ogbegin");
 srand (time (NULL));
 nbmodel = rand()%10;
 glutInit(&argc,argv);
 glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGB|GLUT_DEPTH);
-glutInitWindowSize(800,450);
+glutInitWindowSize(800,600);
 glutInitWindowPosition(20,20);
 glutCreateWindow("ObjLoader");
 glutReshapeFunc(reshape);
@@ -88,8 +93,8 @@ glutDisplayFunc(display);
 glutIdleFunc(display);
 
 glEnable(GL_DEPTH_TEST);
-glEnable(GL_LIGHTING);
-glEnable(GL_LIGHT0);
+//glEnable(GL_LIGHTING);
+//glEnable(GL_LIGHT0);
 GLint poss[4] = {1.00,1.00,1.00,1.00};
 glMaterialiv(GL_FRONT_AND_BACK,GL_SPECULAR,poss);
 /*
@@ -98,6 +103,7 @@ loadObj("/var/www/DEV/3dgen/objets/ladybird.obj",obj_array,1);//replace porsche.
 loadObj("/var/www/DEV/3dgen/objets/lelelelelel.obj",obj_array,2);//replace porsche.obj with radar.obj or any other .obj to display it
 */
 nbfi = 0;
+int randomnb=0;
 DIR *dp;
   struct dirent *ep;
 
@@ -109,7 +115,6 @@ DIR *dp;
       if(strstr(ep->d_name,".obj")!=0)
       {
         sprintf(files[nbfi],"/var/www/DEV/3dgen/OG/objets/glm-data/%s",ep->d_name);
-        printf("%s\n",files[nbfi],GLM_FLAT);
 
         nbfi++;
         }
@@ -124,12 +129,17 @@ for(int i = 0; i<nbmodel;i++){
     rnd[i][0] = rand()%200;
     rnd[i][2] = rand()%200;
     rnd[i][3] = rand()%200;
-    model[i] = glmReadOBJ(files[rand()%nbfi]);
-    printf("model %i", i);
+    randomnb = rand()%nbfi;
+    rndcolors[i][0] = rand()%254;
+    rndcolors[i][1] = rand()%254;
+    rndcolors[i][2] = rand()%254;
+    printf("model %i:%s\n", i, files[randomnb]);
+    model[i] = glmReadOBJ(files[randomnb]);
+    printf("chargé\n");
 }
 
 GLfloat pos[4] = {1.50,1.00,10.00,0.00};
-glLightfv(GL_LIGHT0, GL_POSITION,pos);
+//glLightfv(GL_LIGHT0, GL_POSITION,pos);
 glutMainLoop();
 return 0;
 }
